@@ -1,0 +1,12 @@
+{
+  "name": "empty-valid",
+  "why": "No items is the honest first state: adopting publishes nothing until a named human promotes something.",
+  "verdict": "valid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": []
+  }
+}

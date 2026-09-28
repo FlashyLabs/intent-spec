@@ -1,0 +1,14 @@
+{
+  "name": "no-items",
+  "why": "A fragment without an items array is not a fragment.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z"
+  },
+  "errors": [
+    "no-items"
+  ]
+}

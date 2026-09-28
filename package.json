@@ -1,0 +1,14 @@
+{
+  "name": "@flashylabs/intent-spec",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The canonical, vendor-neutral home of intent/1 — specification, JSON Schema, conformance vectors and a dependency-free checker. The reference implementation is FlashyLabs/intentmesh.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test 'test/**/*.test.mjs'",
+    "lint": "node tools/lint.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

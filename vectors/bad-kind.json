@@ -1,0 +1,34 @@
+{
+  "name": "bad-kind",
+  "why": "kind is one of five words, each of which buys a decay window. An unknown kind has no window, so nothing can be derived from it; it is refused rather than mapped to the nearest one.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "intent/example/settlement-rails",
+        "rev": 1,
+        "kind": "initiative",
+        "status": "open",
+        "title": "Settlement rails for cross-border payouts",
+        "source": {
+          "repo": "repo/example"
+        },
+        "assertedBy": "agent/example-bot",
+        "asserted": "2026-09-01",
+        "expires": "2026-11-30",
+        "visibility": "private",
+        "capabilitiesWanted": [
+          "payments",
+          "compliance"
+        ]
+      }
+    ]
+  },
+  "errors": [
+    "bad-kind"
+  ]
+}

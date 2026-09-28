@@ -1,0 +1,18 @@
+# CI — lint (node --check over every .mjs) and the conformance suite.
+# No install step: this repository has no dependencies, and a check that
+# needs an install is a check that can quietly not run.
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run lint
+      - run: npm test

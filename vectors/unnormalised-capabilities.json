@@ -1,0 +1,34 @@
+{
+  "name": "unnormalised-capabilities",
+  "why": "capabilitiesWanted is already normalised when present: trimmed, lowercased, de-duplicated, at most 20. A matcher that has to normalise on read is a second vocabulary.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "intent/example/settlement-rails",
+        "rev": 1,
+        "kind": "task",
+        "status": "open",
+        "title": "Settlement rails for cross-border payouts",
+        "source": {
+          "repo": "repo/example"
+        },
+        "assertedBy": "agent/example-bot",
+        "asserted": "2026-09-01",
+        "expires": "2026-11-30",
+        "visibility": "private",
+        "capabilitiesWanted": [
+          "Payments",
+          "compliance "
+        ]
+      }
+    ]
+  },
+  "errors": [
+    "unnormalised-capabilities"
+  ]
+}

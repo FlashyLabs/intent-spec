@@ -1,0 +1,15 @@
+{
+  "name": "legacy-version-key",
+  "why": "A fragment declaring the pre-rename key is read forever; implementations must accept it and may warn.",
+  "verdict": "valid",
+  "document": {
+    "backlog": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": []
+  },
+  "warnings": [
+    "legacy-version-key"
+  ]
+}

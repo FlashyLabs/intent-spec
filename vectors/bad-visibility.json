@@ -1,0 +1,33 @@
+{
+  "name": "bad-visibility",
+  "why": "Visibility is stated, never inferred. An item with no visibility is refused rather than defaulted — a reader that assumed private would be right most of the time, and a reader that assumed public would be a disclosure. Refusing is the only reading that cannot be wrong.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "intent/example/settlement-rails",
+        "rev": 1,
+        "kind": "task",
+        "status": "open",
+        "title": "Settlement rails for cross-border payouts",
+        "source": {
+          "repo": "repo/example"
+        },
+        "assertedBy": "agent/example-bot",
+        "asserted": "2026-09-01",
+        "expires": "2026-11-30",
+        "capabilitiesWanted": [
+          "payments",
+          "compliance"
+        ]
+      }
+    ]
+  },
+  "errors": [
+    "bad-visibility"
+  ]
+}

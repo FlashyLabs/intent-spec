@@ -1,0 +1,35 @@
+{
+  "name": "minimal-valid",
+  "why": "One published, promoted item with a want \u2014 the smallest document the matcher can act on.",
+  "verdict": "valid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "backlog/example/settlement-rails",
+        "rev": 1,
+        "kind": "task",
+        "status": "open",
+        "title": "Settlement rails for cross-border payouts",
+        "source": {
+          "repo": "repo/example"
+        },
+        "assertedBy": "person/avery",
+        "asserted": "2026-09-01",
+        "expires": "2026-11-30",
+        "visibility": "public",
+        "promoted": {
+          "by": "person/avery",
+          "at": "2026-09-01"
+        },
+        "capabilitiesWanted": [
+          "payments",
+          "compliance"
+        ]
+      }
+    ]
+  }
+}

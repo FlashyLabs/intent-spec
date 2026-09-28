@@ -1,0 +1,54 @@
+{
+  "name": "full-valid",
+  "why": "Every optional field set, across two tiers: a partner-tier idea at its second revision with a detail, an owner, a ref and a promotion note, and a private bug nobody has promoted. Each expiry is the derived one for its kind.",
+  "verdict": "valid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "intent/example/open-the-partner-api",
+        "rev": 2,
+        "kind": "idea",
+        "status": "doing",
+        "title": "Open the partner API to a second integrator",
+        "detail": "One integrator is a pilot; two is a product. The second needs the rate-limit tier the first never hit.",
+        "owner": "person/avery",
+        "source": {
+          "repo": "repo/example",
+          "ref": "https://github.com/example/example/issues/12"
+        },
+        "capabilitiesWanted": [
+          "integration",
+          "rate-limiting"
+        ],
+        "promoted": {
+          "by": "person/avery",
+          "at": "2026-09-02",
+          "note": "Shared with the partner tier so a counterparty can see we are looking."
+        },
+        "asserted": "2026-09-01",
+        "assertedBy": "agent/example-bot",
+        "expires": "2027-02-28",
+        "visibility": "partner"
+      },
+      {
+        "id": "intent/example/webhook-retries-drop-payload",
+        "rev": 1,
+        "kind": "bug",
+        "status": "open",
+        "title": "Webhook retries drop the original payload",
+        "source": {
+          "repo": "repo/example"
+        },
+        "owner": "org/example",
+        "asserted": "2026-09-01",
+        "assertedBy": "agent/example-bot",
+        "expires": "2026-10-01",
+        "visibility": "private"
+      }
+    ]
+  }
+}

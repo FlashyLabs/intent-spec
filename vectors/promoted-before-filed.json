@@ -1,0 +1,38 @@
+{
+  "name": "promoted-before-filed",
+  "why": "An item cannot have been promoted before it was asserted. A promotion dated earlier than the filing is a record somebody typed rather than one somebody made.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "intent/example/settlement-rails",
+        "rev": 1,
+        "kind": "task",
+        "status": "open",
+        "title": "Settlement rails for cross-border payouts",
+        "source": {
+          "repo": "repo/example"
+        },
+        "assertedBy": "agent/example-bot",
+        "asserted": "2026-09-01",
+        "expires": "2026-11-30",
+        "visibility": "public",
+        "promoted": {
+          "by": "person/avery",
+          "at": "2026-08-31"
+        },
+        "capabilitiesWanted": [
+          "payments",
+          "compliance"
+        ]
+      }
+    ]
+  },
+  "errors": [
+    "promoted-before-filed"
+  ]
+}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://github.com/FlashyLabs/intent-spec/blob/main/SECURITY.md
+    about: A document the checker wrongly accepts or refuses, or anything in `verify` that follows a redirect it should not. Read SECURITY.md for the private channel; do not file the finding as a public issue.
+  - name: Reference implementation (intentmesh)
+    url: https://github.com/FlashyLabs/intentmesh/issues
+    about: Emitter, merge, CLI, site and GitHub Action issues belong to the implementation, not the specification.

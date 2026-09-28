@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intentmesh.org/schema/intent-1.json",
+  "title": "intent/1",
+  "description": "An intent/1 fragment: the intentions one repository owns. Structural validation only — the rules that matter (expiry is derived from the kind; publication requires a named human's promotion; an item names only its own repository and org) are cross-field and are enforced by vendor-intent.mjs, not here. A document that passes this schema is well-formed, not necessarily permitted. Exactly one of `intent` or the legacy `backlog` key must be present; readers accept both permanently. Keys the format does not define are refused, at the top level and inside an item, unless they are `x-` prefixed.",
+  "type": "object",
+  "required": [
+    "source",
+    "org",
+    "generated",
+    "items"
+  ],
+  "additionalProperties": false,
+  "patternProperties": {
+    "^x-": {}
+  },
+  "properties": {
+    "source": {
+      "type": "string",
+      "pattern": "^repo/[a-z0-9][a-z0-9._-]*$"
+    },
+    "org": {
+      "type": "string",
+      "pattern": "^org/[a-z0-9][a-z0-9._-]*$"
+    },
+    "generated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    },
+    "intent": {
+      "const": "1",
+      "description": "The format version. A fragment written before the rename declares `backlog` instead; readers accept both, forever."
+    },
+    "backlog": {
+      "const": "1",
+      "description": "Legacy alias for `intent`, from before the spin-out. Accepted by every reader and never removed."
+    }
+  },
+  "$defs": {
+    "nodeId": {
+      "type": "string",
+      "pattern": "^[a-z]+/[a-z0-9][a-z0-9._-]*$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "id",
+        "rev",
+        "kind",
+        "status",
+        "title",
+        "source",
+        "asserted",
+        "assertedBy",
+        "expires",
+        "visibility"
+      ],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^x-": {}
+      },
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(intent|backlog)/[a-z0-9][a-z0-9._-]*/[a-z0-9][a-z0-9._-]*$"
+        },
+        "rev": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "kind": {
+          "enum": [
+            "idea",
+            "task",
+            "bug",
+            "blocker",
+            "decision"
+          ]
+        },
+        "status": {
+          "enum": [
+            "open",
+            "doing",
+            "blocked",
+            "done",
+            "dropped"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        },
+        "detail": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "owner": {
+          "$ref": "#/$defs/nodeId"
+        },
+        "source": {
+          "type": "object",
+          "required": [
+            "repo"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "repo": {
+              "type": "string",
+              "pattern": "^repo/[a-z0-9][a-z0-9._-]*$"
+            },
+            "ref": {
+              "type": "string",
+              "pattern": "^https://"
+            }
+          }
+        },
+        "capabilitiesWanted": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "pattern": "^[^A-Z]*$",
+            "minLength": 1
+          }
+        },
+        "promoted": {
+          "type": "object",
+          "required": [
+            "at",
+            "by"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "at": {
+              "$ref": "#/$defs/date"
+            },
+            "by": {
+              "type": "string",
+              "pattern": "^person/[a-z0-9][a-z0-9._-]*$"
+            },
+            "note": {
+              "type": "string",
+              "maxLength": 2000
+            }
+          }
+        },
+        "asserted": {
+          "$ref": "#/$defs/date"
+        },
+        "assertedBy": {
+          "$ref": "#/$defs/nodeId"
+        },
+        "expires": {
+          "$ref": "#/$defs/date"
+        },
+        "visibility": {
+          "enum": [
+            "public",
+            "partner",
+            "private"
+          ]
+        }
+      }
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "intent"
+      ],
+      "properties": {
+        "intent": {
+          "const": "1"
+        }
+      }
+    },
+    {
+      "required": [
+        "backlog"
+      ],
+      "properties": {
+        "backlog": {
+          "const": "1"
+        }
+      }
+    }
+  ]
+}

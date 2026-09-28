@@ -1,0 +1,35 @@
+{
+  "name": "foreign-owner",
+  "why": "Nobody files work onto somebody else. An org/ owner other than the fragment’s own org is a proposal the other side approves through the mesh, never a row that appears in their list because a stranger wrote it.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [
+      {
+        "id": "intent/example/settlement-rails",
+        "rev": 1,
+        "kind": "task",
+        "status": "open",
+        "title": "Settlement rails for cross-border payouts",
+        "source": {
+          "repo": "repo/example"
+        },
+        "assertedBy": "agent/example-bot",
+        "asserted": "2026-09-01",
+        "expires": "2026-11-30",
+        "visibility": "private",
+        "capabilitiesWanted": [
+          "payments",
+          "compliance"
+        ],
+        "owner": "org/somebody-else"
+      }
+    ]
+  },
+  "errors": [
+    "foreign-owner"
+  ]
+}

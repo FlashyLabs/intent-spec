@@ -1,0 +1,16 @@
+{
+  "name": "unknown-key",
+  "why": "A top-level key version 1 does not define is refused, never carried silently: a reader that tolerates one will be handed a \"roadmap\" nobody validates. Extensions are x- prefixed.",
+  "verdict": "invalid",
+  "document": {
+    "intent": "1",
+    "source": "repo/example",
+    "org": "org/example",
+    "generated": "2026-09-01T00:00:00Z",
+    "items": [],
+    "roadmap": []
+  },
+  "errors": [
+    "unknown-key"
+  ]
+}
