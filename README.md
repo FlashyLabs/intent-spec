@@ -1,5 +1,7 @@
 # intent/1
 
+<img src="brand/assets/bolt-gold.svg" width="48" alt="">
+
 `intent/1` is a small JSON format for publishing what an organisation intends
 to do next — one document per repository, served at the publisher's own domain,
 merged across an estate — and this repository is its canonical, vendor-neutral
@@ -82,6 +84,19 @@ the two sets differ.
 - **Reference implementation:** [FlashyLabs/intentmesh](https://github.com/FlashyLabs/intentmesh) — the TypeScript library, the CLI, the emitter, the merge, the GitHub Action. This repository's checker is a port of its validation rules; the vectors here started as its vectors.
 - **Sibling estate standards:** `ritual/1` (a subject's rite calendar — liturgies and the observances performed against them; Rites-Network), `aao/0.1` (the Autonomous Agent Organisation charter; `@flashyos/aao`), `trust/1` (the trust edge with its measured/asserted/estimated registers; Magician). Each is a separate format with its own repository; `intent/1` is the future tense beside them and imports none of their vocabulary.
 - Companion formats the reference implementation interoperates with: `shipped/1`, `checkpoint/1`, `devlog/1` — the past tense, sealed where an intention decays.
+
+## Where it sits in the stack
+
+`intent/1` is the discovery layer of Web 4 — the agentic internet as a stack of
+open protocols. The human map of the whole stack is
+[web4](https://github.com/FlashyLabs/web4); its machine twin is
+[stack.json](https://github.com/FlashyLabs/stack.json), served at
+`/.well-known/stack.json`. This repository serves its own institutional front
+door — the same config-driven, dependency-free door every protocol repository in
+the estate serves — generated into `site/` by `node scripts/build-site.mjs` from
+`site.config.json` and its vendored inputs. It is committed here and, once
+deployed, is served at `https://flashylabs.github.io/intent-spec/` (committed as
+of 2026-09-29, not yet fetched).
 
 Status: draft. Version 1 is implemented and in use in one estate; it has no
 independent adopter yet, and it is not published as a standard until it does.

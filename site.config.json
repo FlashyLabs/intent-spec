@@ -1,0 +1,62 @@
+{
+  "property": "intent-spec",
+  "domain": null,
+  "title": "intent/1 — what an organisation intends to do next",
+  "pitch": "intent/1 is a small JSON format for publishing what an organisation intends to do next — one document per repository, served at the publisher's own domain, merged across an estate — and this repository is its canonical, vendor-neutral home.",
+  "layer": "discovery",
+  "contract": "intent/1",
+  "accent": "--flashy-mint",
+  "refusals": [
+    {
+      "title": "Expiry is derived, never accepted as input",
+      "body": "Every item carries expires, and the checker refuses any value that is not exactly asserted plus the kind's window — a blocker lives 14 days, a bug or a decision 30, a task 90, an idea 180. A writer who could set their own expiry could keep a dead idea current forever; re-asserting an item is how it stays alive, because somebody looked and said it again."
+    },
+    {
+      "title": "Filed is not published",
+      "body": "An item is private until a named human promotes it. The reference constructor has no visibility argument; a public or partner item with no promotion record is refused; a promotion whose by is not a person/ id is refused. Agents suggest; humans consent, and the consent is a wire fact rather than a policy."
+    },
+    {
+      "title": "The served copy is a projection, never the record",
+      "body": "A publisher serves only its public items at /.well-known/intent.json. Partner is not an exception — a partner-tier item behind no gate is a public item with a misleading label — and the checker and the consumer refuse a non-public item at a public URL."
+    },
+    {
+      "title": "Unknown keys are refused unless x- prefixed",
+      "body": "At the top level and inside an item. A key nobody validates is a field a reader will start acting on; an extension declares itself with an x- prefix so a reader knows it is one."
+    },
+    {
+      "title": "Unreachable is not absent",
+      "body": "A consumer fetches over https only, with a timeout and a size cap, follows redirects only within the same publisher, and never reads a network failure as 'they publish nothing' — that would be a claim about somebody else's organisation made on the strength of your own outage."
+    }
+  ],
+  "faq": [
+    {
+      "q": "What does the checker refuse?",
+      "a": "A value for expires that is not exactly asserted plus the kind's window; a public or partner item with no named-human promotion; a promotion whose by is not a person/ id; unknown keys that are not x- prefixed; and a non-public item served at the public URL. It refuses and names the refusal; it does not guess."
+    },
+    {
+      "q": "Where does this sit in Web 4?",
+      "a": "The discovery layer — the question 'who can accomplish this intent?'. A publisher states what it wants next and a reader, human or agent, finds who can serve it. The stack page and the Web 4 hub show where it sits among the nine layers."
+    },
+    {
+      "q": "Is this a standard yet?",
+      "a": "No. intent/1 is draft. It is implemented and in use in one estate, has no independent adopter yet, and is not published as a standard until one conforms and is named. Draft is the honest status until then."
+    },
+    {
+      "q": "Is publishing automatic?",
+      "a": "No. An item is private until a named human promotes it, and the reference constructor has no visibility argument. Agents suggest; humans consent, and that consent is recorded on the wire rather than assumed by policy."
+    },
+    {
+      "q": "What is served at /.well-known/intent.json?",
+      "a": "Only the publisher's public items — a projection, never the record. A partner-tier item behind no gate is a public item with a misleading label, and a consumer refuses one at a public URL as served-nonpublic."
+    },
+    {
+      "q": "What is the reference implementation?",
+      "a": "FlashyLabs/intentmesh — the TypeScript library, CLI, emitter, merge and GitHub Action. This repository is the specification, schema, conformance vectors and a dependency-free checker; the checker is a port of intentmesh's validation rules."
+    }
+  ],
+  "links": {
+    "hub": "https://github.com/FlashyLabs/web4",
+    "spec": "https://github.com/FlashyLabs/intent-spec",
+    "repo": "https://github.com/FlashyLabs/intent-spec"
+  }
+}

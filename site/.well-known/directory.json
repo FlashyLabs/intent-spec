@@ -1,0 +1,80 @@
+{
+  "contract": "directory/1",
+  "generated": "2026-09-29",
+  "org": "org/intent-spec",
+  "nodes": [
+    {
+      "id": "org/intent-spec",
+      "kind": "org",
+      "name": "Intent Spec"
+    },
+    {
+      "id": "person/michael",
+      "kind": "person",
+      "name": "Michael Gord"
+    },
+    {
+      "id": "agent/intent-spec-canon",
+      "kind": "agent",
+      "name": "canon",
+      "for": "org/intent-spec"
+    },
+    {
+      "id": "agent/intent-spec-conformance",
+      "kind": "agent",
+      "name": "conformance",
+      "for": "org/intent-spec"
+    },
+    {
+      "id": "agent/intent-spec-release",
+      "kind": "agent",
+      "name": "release",
+      "for": "org/intent-spec"
+    },
+    {
+      "id": "agent/intent-spec-adoption",
+      "kind": "agent",
+      "name": "adoption",
+      "for": "org/intent-spec"
+    },
+    {
+      "id": "agent/intent-spec-review",
+      "kind": "agent",
+      "name": "review",
+      "for": "org/intent-spec"
+    }
+  ],
+  "edges": [
+    {
+      "from": "org/intent-spec",
+      "rel": "staffs",
+      "to": "agent/intent-spec-canon",
+      "by": "person/michael"
+    },
+    {
+      "from": "org/intent-spec",
+      "rel": "staffs",
+      "to": "agent/intent-spec-conformance",
+      "by": "person/michael"
+    },
+    {
+      "from": "org/intent-spec",
+      "rel": "staffs",
+      "to": "agent/intent-spec-release",
+      "by": "person/michael"
+    },
+    {
+      "from": "org/intent-spec",
+      "rel": "staffs",
+      "to": "agent/intent-spec-adoption",
+      "by": "person/michael"
+    },
+    {
+      "from": "org/intent-spec",
+      "rel": "staffs",
+      "to": "agent/intent-spec-review",
+      "by": "person/michael"
+    }
+  ],
+  "x-note": "Five agents, one per charter role. Generated from flashyos.roles.json; a live org is provisioned from the charter with provision-org-from-charter."
+}
