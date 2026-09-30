@@ -406,13 +406,17 @@ describe('SPEC.md and README.md agree with the checker', () => {
     assert.match(spec, /^Status: draft/m)
     assert.match(readme, /^Status: draft/m)
     const last = readme.trimEnd().split('\n').at(-1)
-    assert.equal(last, 'Licence: to be declared at launch. The estate licence register in flashyos governs; this repository is not yet open-sourced.')
+    assert.equal(last, 'Licensed under Apache-2.0 (holder Flashy Labs); the estate register in flashyos `tools/estate-licences.mjs` is the authority.')
     assert.ok(!readme.startsWith('This repository contains'))
   })
 
-  test('no file under the tree declares a licence', () => {
-    assert.ok(!readdirSync(ROOT).some((f) => /^licen[cs]e/i.test(f)))
-    assert.equal(readJson(join(ROOT, 'package.json')).license, undefined)
+  test('the LICENSE is the Apache-2.0 text the estate register names', () => {
+    const licenseFile = readdirSync(ROOT).find((f) => /^licen[cs]e/i.test(f))
+    assert.ok(licenseFile, 'a LICENSE file must be present')
+    const license = readFileSync(join(ROOT, licenseFile), 'utf8')
+    assert.match(license, /Apache License/, 'the LICENSE must be the Apache-2.0 text')
+    assert.match(license, /Copyright 2026 Flashy Labs/, 'the LICENSE must name the estate copyright holder')
+    assert.equal(readJson(join(ROOT, 'package.json')).license, 'Apache-2.0')
   })
 })
 

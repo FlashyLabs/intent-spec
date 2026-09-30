@@ -2,6 +2,7 @@
   "name": "@flashylabs/intent-spec",
   "version": "0.0.0",
   "private": true,
+  "license": "Apache-2.0",
   "description": "The canonical, vendor-neutral home of intent/1 — specification, JSON Schema, conformance vectors and a dependency-free checker. The reference implementation is FlashyLabs/intentmesh.",
   "type": "module",
   "scripts": {

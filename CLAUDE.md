@@ -58,9 +58,20 @@ node vendor-intent.mjs verify <domain>    # needs a network; nothing else here d
 - **The legacy `backlog` key is valid forever** and warns.
 - **Every vector agrees with the checker exactly** — the full set of codes,
   not "at least these" — and every invalid vector is named for its refusal.
+- **Parity with the reference implementation is machine-checked, not asserted
+  in prose.** `test/parity.test.mjs` runs both this checker and intentmesh's
+  `vendor-intentmesh.mjs` over every vector and compares them verdict by
+  verdict; it reports UNKNOWN (skips) when the sibling checkout is absent. The
+  two agree on all but the two pinned in `KNOWN_DIVERGENCES`: intentmesh's
+  checker does not yet enforce `unknown-key` / `unknown-item-key`, so it accepts
+  a document intent-spec (canonical) refuses. The test fails if a new divergence
+  appears or a pinned one heals.
 - **`SPEC.md` lists every refusal and no other.** The suite reads the table.
-- **No licence is declared here.** No `LICENSE` file, no `license` field.
-  The README's last line says so in the exact words the estate requires.
+- **The licence is Apache-2.0 (holder Flashy Labs).** The `LICENSE` file is the
+  canonical Apache-2.0 text and `package.json` carries the `license` field; the
+  estate register in flashyos `tools/estate-licences.mjs` is the authority, not
+  a decision made here. The README's last line states it in the exact words the
+  suite pins.
 
 ## House rules — true in every repository in this estate
 

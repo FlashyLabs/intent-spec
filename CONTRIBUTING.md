@@ -59,8 +59,9 @@ implementation follows, and say in this pull request that you have.
   known one.
 - Widening `ITEM_KINDS`. Each kind buys a decay window; a kind added to make
   a classification easier inflates the number people read.
-- A `LICENSE` file or a `license` field. The estate licence register in
-  flashyos declares it, once.
+- A change to the licence. It is Apache-2.0 (holder Flashy Labs), declared once
+  in the estate register in flashyos `tools/estate-licences.mjs`; that register
+  is the authority, not a decision made in this repository.
 
 ## Commit messages
 

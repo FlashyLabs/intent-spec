@@ -12,6 +12,12 @@ which. The checker beside this file, `vendor-intent.mjs`, enforces every rule
 below and no others, and `test/intent.test.mjs` asserts that the refusal table
 in this document and the codes the checker can emit are the same set.
 
+**Version 1 is frozen.** The document shape under `intent/1` — its keys, its
+kinds, its decay windows and its refusals — does not change. A change to what a
+valid `intent/1` document *is* mints `intent/2`; it never edits version 1. What
+still moves is prose clarity and the checker's fidelity to these rules, never
+the rules themselves.
+
 ## The document
 
 One repository emits one document. `source` is the repository that emitted

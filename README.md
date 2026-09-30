@@ -76,6 +76,7 @@ the two sets differ.
 | `vendor-intent.mjs` | The dependency-free checker: `validate(doc)`, the reference constructors, the fetch rules, and the CLI. `node:` builtins only. |
 | `vectors/` | Conformance vectors: a document, a verdict, and the exact refusal codes. 22 today — 5 valid, 17 invalid, each invalid named for the refusal it triggers. |
 | `test/intent.test.mjs` | `node --test`: every vector, a unit test per rule, and the prose-agrees-with-code checks. |
+| `test/parity.test.mjs` | Runs this checker and intentmesh's over every vector and compares them verdict by verdict; UNKNOWN when the sibling checkout is absent. |
 | `tools/lint.mjs` | `node --check` over every `.mjs` in the tree. |
 | `CLAUDE.md`, `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md` | How this repository is worked on. |
 
@@ -101,4 +102,7 @@ of 2026-09-29, not yet fetched).
 Status: draft. Version 1 is implemented and in use in one estate; it has no
 independent adopter yet, and it is not published as a standard until it does.
 
-Licence: to be declared at launch. The estate licence register in flashyos governs; this repository is not yet open-sourced.
+Version 1 is frozen: the document shape under `intent/1` does not change — a
+change to what a valid document is mints `intent/2`, never edits version 1.
+
+Licensed under Apache-2.0 (holder Flashy Labs); the estate register in flashyos `tools/estate-licences.mjs` is the authority.

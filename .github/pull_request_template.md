@@ -19,7 +19,7 @@ For anything else (clarity, tooling, docs), say so and skip the list.
 
 - [ ] `npm run lint` passes
 - [ ] `npm test` passes
-- [ ] no dependency, install step, `LICENSE` file or `license` field was added
+- [ ] no dependency or install step was added; the licence is unchanged (Apache-2.0, holder Flashy Labs, per the estate register)
 - [ ] no figure or adoption claim was added that a test does not assert
 
 ## Branch measured
